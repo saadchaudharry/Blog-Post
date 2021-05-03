@@ -1,0 +1,20 @@
+{% extends 'mblog/base.html' %} {% load static %} {% block content %}
+
+<div class="col-sm-10">
+  <h3 class="my-5">Home Page</h3>
+
+  {% for i in posts %}
+
+  <div class="jumbotron jumbotron-fluid" style="background-color: white">
+    <div class="container">
+      <h1 class="display-4 home-title" style="cursor: pointer;">{{i.title}}</h1>
+      <p id="show" class="lead">{{i.desc | truncatewords:30}} <a id="show-btn" href="#"><small> Read More</small></a></p>
+      <p></p>
+      <small class="text-primary">{{i.date}}</small>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endblock content %}

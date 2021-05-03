@@ -1,0 +1,28 @@
+{% extends 'mblog/base.html' %} {% load static %} {% block content %}
+
+<div class="col-sm-10">
+  <h3 class="my-5">Login</h3>
+
+   <form method="POST" novalidate>
+  {% csrf_token %}
+  
+  {% for i in form %}
+
+  <div class="form-group">
+  {{i.label_tag}}  {{i}}  <small class="text-danger"> {{i.errors|striptags}} </small>
+  </div>
+
+  {% endfor %}
+<br>
+  <button class=" btn btn-outline-primary" >Login</button>
+
+  {% if form.non_field_errors %}
+  {% for i in form.non_field_errors %}
+  <p class="alert alert-danger my-3">{{i}}</p>
+  {% endfor %}
+  {% endif %}
+  </form>
+  
+</div>
+
+{% endblock content %}
