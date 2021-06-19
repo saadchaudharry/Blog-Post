@@ -7,10 +7,18 @@
 
   <div class="jumbotron jumbotron-fluid" style="background-color: white">
     <div class="container">
-      <h1 class="display-4 home-title" style="cursor: pointer;">{{i.title}}</h1>
-      <p id="show" class="lead">{{i.desc | truncatewords:30}} <a id="show-btn" href="#"><small> Read More</small></a></p>
+      <span class="text-primary" style="cursor:pointer"> 
+      <img src="{{request.user.Profile.image.url}}" class="img-thumbnail rounded-circle myimg2">
+      {{full_name}} 
+      </span>
+      <small>{{i.date}}</small>
+      <hr />
+      <h1 class="display-4 home-title" style="cursor: pointer">{{i.title}}</h1>
+      <p id="show" class="lead">
+        {{i.desc | truncatewords:30}}
+        <a id="show-btn" href="#"><small> Read More</small></a>
+      </p>
       <p></p>
-      <small class="text-primary">{{i.date}}</small>
     </div>
   </div>
 

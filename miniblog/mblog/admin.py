@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import blogPost, Contact
+from .models import blogPost, Contact, Profile
 # Register your models here.
 @admin.register(blogPost)
 class blogPostModelAdmin(admin.ModelAdmin):
@@ -8,3 +8,5 @@ class blogPostModelAdmin(admin.ModelAdmin):
 @admin.register(Contact)
 class ContactModelAdmin(admin.ModelAdmin):
     list_display = ['id', 'name','email', 'date']    
+
+admin.site.register(Profile)    

@@ -16,6 +16,8 @@
 
 <div class="col-sm-2 text-center my-5">
 <h4 class="my-5">Profile</h4>
+<img src="{{request.user.Profile.image.url}}" class="img-thumbnail rounded-circle myimg">
+<br> <br>
 <h6>{{full_name}}</h6>
 
 {% for i in groups %}

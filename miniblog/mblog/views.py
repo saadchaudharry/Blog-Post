@@ -10,7 +10,8 @@ from django.contrib.auth.models import Group
 # -----------------------home---------------------
 def home(request):
     posts = blogPost.objects.all()
-    context = {'posts':posts, 'home':'active'}
+    full_name = request.user.get_full_name()
+    context = {'posts':posts, 'home':'active', 'full_name':full_name}
     return render(request, 'mblog/home.html', context)
 
 # -------------------About------------------
